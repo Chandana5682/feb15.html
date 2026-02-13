@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Valentine 💖</title>
+<style>
+body{
+margin:0;
+font-family:'Segoe UI', sans-serif;
+background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+text-align:center;
+overflow:hidden;
+}
+
+/* Slides */
+.slide{
+display:none;
+height:100vh;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:20px;
+}
+
+.active{
+display:flex;
+}
+
+/* Headings */
+h1{
+color:#b30059;
+font-size:38px;
+margin-bottom:15px;
+}
+
+p{
+font-size:18px;
+color:#4d004d;
+}
+
+/* Buttons */
+button{
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:25px;
+cursor:pointer;
+margin:10px;
+transition:0.3s;
+}
+
+.nextBtn{
+background:#ff4d88;
+color:white;
+}
+
+.yesBtn{
+background:#ff0066;
+color:white;
+}
+
+.noBtn{
+background:#999;
+color:white;
+position:absolute;
+}
+
+/* Love Card */
+.loveCard{
+background:white;
+padding:30px;
+border-radius:25px;
+width:350px;
+box-shadow:0px 10px 30px rgba(0,0,0,0.3);
+animation:pop 0.6s ease;
+}
+
+.loveCard img{
+width:100%;
+border-radius:20px;
+margin-top:15px;
+}
+
+@keyframes pop{
+from{transform:scale(0.7); opacity:0;}
+to{transform:scale(1); opacity:1;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Slide 1 -->
+<div class="slide active" id="slide1">
+<h1>Welcome My Cutie 🤗💖</h1>
+<p>I made this only for you 🥺💕</p>
+<p>Please go slowly... my heart is inside 💞</p>
+<button class="nextBtn" onclick="nextSlide(2)">Open 💌</button>
+</div>
+
+<!-- Slide 2 -->
+<div class="slide" id="slide2">
+<h1>Will you be my Valentine? 😘💘</h1>
+<button class="yesBtn" onclick="nextSlide(3)">Yes 💖</button>
+<button class="noBtn" id="noBtn">No 😅</button>
+</div>
+
+<!-- Slide 3 -->
+<div class="slide" id="slide3">
+<h1>Yayyyy My Love 🌹💞</h1>
+
+<p>Thank you for choosing me 🥺❤️</p>
+<p>You make my world beautiful like these flowers 🌸</p>
+<button class="nextBtn" onclick="nextSlide(4)">Next 💕</button>
+</div>
+
+<!-- Slide 4 (Your Photo in Card) -->
+<div class="slide" id="slide4">
+<div class="loveCard">
+<h1>Our Beautiful Memory 💞</h1>
+<img src="C:\Users\Chand\Downloads\ourphoto.jpg"></img>
+
+<p>
+This picture is not just a memory...  
+It is my favorite place — in your arms 🥺❤️  
+Every smile of yours makes my world brighter ✨
+</p>
+<button class="nextBtn" onclick="nextSlide(5)">Next 💌</button>
+</div>
+</div>
+
+<!-- Slide 5 -->
+<div class="slide" id="slide5">
+<h1>My Heart Message For You 💗</h1>
+<p>I don’t promise a perfect life...</p>
+<p>But I promise to hold your hand in every imperfect moment 🥺</p>
+<p>You are my peace, my smile, my everything 💞</p>
+<p>I love you forever 💘</p>
+</div>
+
+<script>
+function nextSlide(num){
+let slides=document.querySelectorAll('.slide');
+slides.forEach(s=>s.classList.remove('active'));
+document.getElementById('slide'+num).classList.add('active');
+}
+
+/* Running No Button */
+let noBtn=document.getElementById("noBtn");
+noBtn.addEventListener("mouseover",function(){
+let x=Math.random()*(window.innerWidth-100);
+let y=Math.random()*(window.innerHeight-50);
+noBtn.style.left=x+"px";
+noBtn.style.top=y+"px";
+});
+</script>
+
+</body>
+</html>
